@@ -4,20 +4,15 @@
     justify-content: center;
 }
 
-
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(8, 1fr); /* Adjust the number of columns as needed */
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr); /* Adjust the number of columns as needed */
     background-color: #f0f0f0; /* Set the background color of the grid */
-    padding: 10px; /* Add padding to the grid container */
+    padding: 5px; /* Add padding to the grid container */
 }
 
 .grid-box {
-    border: 1px solid #ccc; /* Add border to the grid cells */
-    padding: 10px; /* Add padding to the grid cells */
-    text-align: center;
-}
-
-* {
-    border: 2px solid black;
+    border: 1px solid #d51010; /* Add border to the grid cells */
+    text-align: center; 
 }
