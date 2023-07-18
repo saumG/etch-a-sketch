@@ -1,7 +1,7 @@
 
 //set grid size
 let numCol = 8;
-let numRow = 8;
+let numRow = 10;
 
 
 //Get the DOM for the grid container in which the grid elements will be added
@@ -14,7 +14,7 @@ function createGrid () {
         for (let col = 0; col < numCol; col++){
             const cell = document.createElement('div');
             cell.classList.add('grid-box');
-            cell.textContent = (row)*numRow + col;
+            cell.textContent = (row)*numCol + col + 1;
             gridContainer.appendChild(cell);
         }
     }
