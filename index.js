@@ -71,7 +71,9 @@ function colorGrid(){
         case 'eraser':
             this.style.backgroundColor = '#ffffff';
             break;
-        
+        default:
+            this.style.backgroundColor = color;
+            break;
     }
 }
 function deleteBoxDivs() {
