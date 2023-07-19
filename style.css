@@ -73,14 +73,14 @@ html, body {
     justify-content: center;
 }
 
-.settings > #btn,
-.settings > #single {
+.settings > #btn {
     padding: 12px 32px;
     border: 2px solid blueviolet;
     border-radius: 36px;
     cursor: pointer;
 }
 
+.clear:active,
 .active { 
     /* TODO */
     background-color: #d51010; 
