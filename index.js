@@ -11,11 +11,14 @@ const gridSlider = document.getElementById('size-range');
 const gridValSpans = document.querySelectorAll('.grid-val');
 const gridLines = document.querySelector('.grid-lines');
 const clear = document.querySelector('.clear');
+const buttons = document.querySelectorAll('#btn');
+
 
 //set grid size
 let numCols = 10;
 let numRows = 10;
 
+// Creates grid on page load
 createGrid()
 
 //Create the grid
@@ -58,5 +61,11 @@ function deleteBoxDivs() {
     gridBoxes.forEach(gridBox => gridBox.remove());
 }
 
+
 // EVENT LISTENERS
 gridSlider.addEventListener('input', () => sliderUpdate());
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        button.classList.toggle('active');
+    })
+})
