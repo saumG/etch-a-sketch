@@ -46,9 +46,24 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 200px;
+    width: 250px;
     border: 2px solid brown;
     gap: 12px;
+    padding: 12px 0px;
+}
+
+.settings > .pen-color,
+.settings > .bg-color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.settings > div > #box {
+    border: 2px solid black;
+    width: 36px;
+    height: 36px;
 }
 
 .settings > div {
