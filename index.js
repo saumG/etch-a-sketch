@@ -23,7 +23,6 @@ function createGrid () {
     gridContainer.style.setProperty('--grid-rows', numRows);
     gridContainer.style.setProperty('--grid-cols', numCols);
 
-
     let gridArea = numCols*numRows;
     for (let box = 0; box < gridArea; box++){
         let cell = document.createElement("div");
@@ -49,3 +48,11 @@ function sliderUpdate () {
     // Recreate the grid with the new size
     createGrid();
 }
+
+function deleteBoxDivs() {
+    let gridBoxes = gridContainer.querySelectorAll('div');
+    gridBoxes.forEach(gridBox => gridBox.remove());
+}
+
+// EVENT LISTENERS
+gridSlider.addEventListener('input', () => sliderUpdate());
