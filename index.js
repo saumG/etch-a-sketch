@@ -15,6 +15,7 @@ const toggleButtons = document.querySelectorAll('.toggle');
 
 //set mode to default
 let mode = 'default';
+let isDrawing = false;
 
 //set grid size
 let numCols = 10;
@@ -37,8 +38,23 @@ function createGrid () {
     console.log(`created grid ${numCols}`);
 
     //Color the grid
-    let gridBoxes = gridContainer.querySelectorAll('div');
-    gridBoxes.forEach(gridBox => gridBox.addEventListener('mousedown', colorGrid));
+    const gridBoxes = document.querySelectorAll('.grid-box');
+    gridBoxes.forEach((gridBox) => {
+        gridBox.addEventListener('mousedown', () => {
+        isDrawing = true;
+        colorGrid(gridBox);
+        });
+
+        gridBox.addEventListener('mouseenter', () => {
+        if (isDrawing) {
+            colorGrid(gridBox);
+        }
+        });
+
+        gridBox.addEventListener('mouseup', () => {
+        isDrawing = false;
+        });
+    });
 }
 
 function sliderUpdate () {
@@ -96,7 +112,7 @@ function toggleButtonActive(button) {
 
 
 // EVENT LISTENERS
-clear.addEventListener('click', eraseAll());
+clear.addEventListener('click', eraseAll);
 
 gridSlider.addEventListener('input', () => sliderUpdate());
 toggleButtons.forEach(button => {

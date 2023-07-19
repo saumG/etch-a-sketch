@@ -60,11 +60,15 @@ html, body {
     gap: 18px;
 }
 
-#box {
-    border: 2px solid black;
-    width: 36px;
+#color-select, 
+#bg-select {
+    display: flex;
+    border: none;
+    width: 44px;
     height: 36px;
     cursor: pointer;
+    padding: 0;
+    margin: 0;
 }
 
 .settings > div {
