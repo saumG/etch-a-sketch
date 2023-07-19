@@ -107,6 +107,15 @@ function toggleButtonActive(button) {
     toggleButtons.forEach(btn => {
         btn.classList.toggle('active', btn === button && !button.classList.contains('active'));
     });
+    if (rainbowMode.classList.contains('active')) {
+        mode = 'rainbow';
+    } else if (shadingMode.classList.contains('active')) {
+        mode = 'shading'; // Replace 'shading' with the appropriate mode name if needed
+    } else if (eraserMode.classList.contains('active')) {
+        mode = 'eraser';
+    } else {
+        mode = 'default';
+    }
 }
 
 
@@ -120,11 +129,3 @@ toggleButtons.forEach(button => {
         toggleButtonActive(button);
     });
 });
-
-rainbowMode.addEventListener('click', () => {
-    mode = 'rainbow';
-});
-
-eraserMode.addEventListener('click', () => {
-    mode = 'eraser';
-}); 
