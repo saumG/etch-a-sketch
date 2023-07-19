@@ -9,12 +9,13 @@ const shadingMode = document.querySelector('.shading');
 const eraserMode = document.querySelector('.eraser');
 const gridSlider = document.getElementById('size-range');
 const gridValSpans = document.querySelectorAll('.grid-val');
-const gridLines = document.querySelector('.grid-lines');
+const gridLinesMode = document.querySelector('.grid-lines');
 const clear = document.querySelector('.clear');
 const toggleButtons = document.querySelectorAll('.toggle');
 
 //set mode to default
 let mode = 'default';
+let showGrid = true;
 let isDrawing = false;
 
 //set grid size
@@ -90,7 +91,7 @@ function colorGrid(gridBox) {
         default:
             gridBox.style.backgroundColor = colorChoice.value;
             break;
-}
+    }
 }
 
 function eraseAll () {
@@ -113,11 +114,10 @@ function toggleButtonActive(button) {
         mode = 'shading'; // Replace 'shading' with the appropriate mode name if needed
     } else if (eraserMode.classList.contains('active')) {
         mode = 'eraser';
-    } else {
+    }  else {
         mode = 'default';
     }
 }
-
 
 
 // EVENT LISTENERS
@@ -129,3 +129,15 @@ toggleButtons.forEach(button => {
         toggleButtonActive(button);
     });
 });
+gridLinesMode.addEventListener('click', () => {
+    gridLinesMode.classList.toggle('active', !gridLinesMode.classList.contains('active'));
+    const gridBoxes = document.querySelectorAll('.grid-box');
+
+    gridBoxes.forEach((gridBox) => {
+        if (gridLinesMode.classList.contains('active')){
+            gridBox.style.border = 'none';
+        } else {
+            gridBox.style.border = '0.5px solid #eeeeee';
+        }
+    });
+})

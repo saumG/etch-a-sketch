@@ -33,7 +33,7 @@ html, body {
 }
 
 .grid-box {
-    border: 1px solid #d51010; /* Add border to the grid cells */
+    border: 0.5px solid #eeeeee; /* Add border to the grid cells */
     text-align: center;
     box-sizing: border-box;
     width: 100%;
