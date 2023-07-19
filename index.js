@@ -7,14 +7,16 @@ const bgChoice = document.getElementById('bg-select');
 const rainbowMode = document.querySelector('.rainbow');
 const shadingMode = document.querySelector('.shading');
 const eraserMode = document.querySelector('.eraser');
-const gridSize = document.getElementById('size-range');
+const gridSlider = document.getElementById('size-range');
+const gridValSpans = document.querySelectorAll('grid-val');
 const gridLines = document.querySelector('.grid-lines');
 const clear = document.querySelector('.clear');
 
 //set grid size
-let numCols = 64;
-let numRows = 64;
+let numCols = 10;
+let numRows = 10;
 
+createGrid()
 
 //Create the grid
 function createGrid () {
@@ -28,7 +30,22 @@ function createGrid () {
         // cell.innerText = box + 1;
         gridContainer.appendChild(cell).className = "grid-box";
     }
-    console.log("created grid");
+    console.log(`created grid ${numCols}`);
 }
 
-createGrid()
+function sliderUpdate () {
+    // Get the current value of the slider
+    const sliderValue = gridSlider.value;
+    
+    // Update the grid size variables
+    numCols = sliderValue;
+    numRows = sliderValue;
+
+    // Update the text content of the grid-val spans
+    gridValSpans.forEach(span => {
+        span.textContent = sliderValue;
+    });
+
+    // Recreate the grid with the new size
+    createGrid();
+}
