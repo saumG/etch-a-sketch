@@ -13,6 +13,8 @@ const gridLines = document.querySelector('.grid-lines');
 const clear = document.querySelector('.clear');
 const toggleButtons = document.querySelectorAll('.toggle');
 
+//set mode to default
+let mode = 'default';
 
 //set grid size
 let numCols = 10;
@@ -33,6 +35,10 @@ function createGrid () {
         gridContainer.appendChild(cell).className = "grid-box";
     }
     console.log(`created grid ${numCols}`);
+    
+    //Color the grid
+    let gridBoxes = gridContainer.querySelectorAll('div');
+    gridBoxes.forEach(gridBox => gridBox.addEventListener('mousedown', colorGrid()));
 }
 
 function sliderUpdate () {
@@ -68,6 +74,7 @@ function toggleButtonActive(button) {
 }
 
 // EVENT LISTENERS
+
 gridSlider.addEventListener('input', () => sliderUpdate());
 toggleButtons.forEach(button => {
     button.addEventListener('click', () => {
