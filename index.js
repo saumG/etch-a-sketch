@@ -8,7 +8,7 @@ const rainbowMode = document.querySelector('.rainbow');
 const shadingMode = document.querySelector('.shading');
 const eraserMode = document.querySelector('.eraser');
 const gridSlider = document.getElementById('size-range');
-const gridValSpans = document.querySelectorAll('grid-val');
+const gridValSpans = document.querySelectorAll('.grid-val');
 const gridLines = document.querySelector('.grid-lines');
 const clear = document.querySelector('.clear');
 
@@ -35,7 +35,7 @@ function createGrid () {
 function sliderUpdate () {
     // Get the current value of the slider
     const sliderValue = gridSlider.value;
-    
+    console.log("update slider value " + `${sliderValue}`)
     // Update the grid size variables
     numCols = sliderValue;
     numRows = sliderValue;
@@ -43,7 +43,11 @@ function sliderUpdate () {
     // Update the text content of the grid-val spans
     gridValSpans.forEach(span => {
         span.textContent = sliderValue;
+        console.log("update slider value " + `${sliderValue}`)
     });
+
+    // Delete the existing grid boxes
+    deleteBoxDivs();
 
     // Recreate the grid with the new size
     createGrid();
