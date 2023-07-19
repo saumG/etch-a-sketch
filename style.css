@@ -87,15 +87,19 @@ input {
 
 .settings > #btn {
     padding: 12px 32px;
-    border: 2px solid blueviolet;
+    border: 2px solid #FEB246;
     border-radius: 36px;
     cursor: pointer;
 }
 
+.settings > #size-range {
+    margin-top: 12px;
+}
+
 .clear:active,
 .active { 
-    /* TODO */
-    background-color: #d51010; 
+    background-color: #F79401;
+    color: #0D0702;
 }
 
 /* HEADER AND FOOTER */
@@ -121,4 +125,23 @@ input {
     padding: 24px;
     color: #FCA521;
     margin-top: auto;
+}
+
+/* STYLING THE SLIDER */
+input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 5px;
+    border-radius: 5px;
+    background: #ccc; /* Fallback color for browsers that don't support gradient */
+    background: linear-gradient(to right, #FCA521, #FCA521) no-repeat, #ccc;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #FCA521;
+    border: 2px solid #232323;
+    margin-top: -5px;
 }
