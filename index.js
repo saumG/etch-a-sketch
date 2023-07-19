@@ -35,7 +35,7 @@ function createGrid () {
         gridContainer.appendChild(cell).className = "grid-box";
     }
     console.log(`created grid ${numCols}`);
-    
+
     //Color the grid
     let gridBoxes = gridContainer.querySelectorAll('div');
     gridBoxes.forEach(gridBox => gridBox.addEventListener('mousedown', colorGrid()));
@@ -62,6 +62,18 @@ function sliderUpdate () {
     createGrid();
 }
 
+function colorGrid(){
+    switch (color) {
+        case 'rainbow':
+            this.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
+            this.classList.remove('grey')
+            break;
+        case 'eraser':
+            this.style.backgroundColor = '#ffffff';
+            break;
+        
+    }
+}
 function deleteBoxDivs() {
     let gridBoxes = gridContainer.querySelectorAll('div');
     gridBoxes.forEach(gridBox => gridBox.remove());
@@ -72,6 +84,8 @@ function toggleButtonActive(button) {
         btn.classList.toggle('active', btn === button && !button.classList.contains('active'));
     });
 }
+
+f
 
 // EVENT LISTENERS
 
