@@ -2,6 +2,8 @@
 const gridContainer = document.querySelector('.grid-container');
 
 //Get all necessary DOMs
+const colorChoice = document.getElementById('color-select');
+const bgChoice = document.getElementById('bg-select');
 
 //set grid size
 let numCols = 64;
