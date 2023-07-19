@@ -17,19 +17,19 @@ html, body {
 
 .container-wrapper {
     display: grid;
-    border: 3px solid blue;
     max-width: 100%;
+    padding: 4px;
 }
 
 .grid-container {
     display: grid;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr); /* Adjust the number of columns as needed */
-    background-color: #f0f0f0; /* Set the background color of the grid */
-    padding: 5px; /* Add padding to the grid container */
+    background-color: white; /* Set the background color of the grid */
     width: 960px;
     height: 960px;
     max-width: 100%;
+    border: 3px solid red;
 }
 
 .grid-box {
