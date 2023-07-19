@@ -93,9 +93,10 @@ function toggleButtonActive(button) {
     });
 }
 
-f
+
 
 // EVENT LISTENERS
+clear.addEventListener('click', eraseAll());
 
 gridSlider.addEventListener('input', () => sliderUpdate());
 toggleButtons.forEach(button => {
