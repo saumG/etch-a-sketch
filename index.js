@@ -38,7 +38,7 @@ function createGrid () {
 
     //Color the grid
     let gridBoxes = gridContainer.querySelectorAll('div');
-    gridBoxes.forEach(gridBox => gridBox.addEventListener('mousedown', colorGrid()));
+    gridBoxes.forEach(gridBox => gridBox.addEventListener('mousedown', colorGrid));
 }
 
 function sliderUpdate () {
@@ -62,19 +62,19 @@ function sliderUpdate () {
     createGrid();
 }
 
-function colorGrid(){
-    switch (color) {
+function colorGrid(gridBox) {
+    switch (mode) {
         case 'rainbow':
-            this.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
-            this.classList.remove('grey')
+            gridBox.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            gridBox.classList.remove('grey');
             break;
         case 'eraser':
-            this.style.backgroundColor = '#ffffff';
+            gridBox.style.backgroundColor = bgChoice.value;
             break;
         default:
-            this.style.backgroundColor = color;
+            gridBox.style.backgroundColor = colorChoice.value;
             break;
-    }
+}
 }
 
 function eraseAll () {
@@ -104,3 +104,11 @@ toggleButtons.forEach(button => {
         toggleButtonActive(button);
     });
 });
+
+rainbowMode.addEventListener('click', () => {
+    mode = 'rainbow';
+});
+
+eraserMode.addEventListener('click', () => {
+    mode = 'eraser';
+}); 
