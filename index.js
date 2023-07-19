@@ -11,7 +11,7 @@ const gridSlider = document.getElementById('size-range');
 const gridValSpans = document.querySelectorAll('.grid-val');
 const gridLines = document.querySelector('.grid-lines');
 const clear = document.querySelector('.clear');
-const toggled = document.querySelectorAll('.toggle');
+const toggleButtons = document.querySelectorAll('.toggle');
 
 
 //set grid size
@@ -62,11 +62,15 @@ function deleteBoxDivs() {
 }
 
 function toggleButtonActive(button) {
-    buttons.forEach(btn => {
-        btn.classList.toggle('active', btn === button);
+    toggleButtons.forEach(btn => {
+        btn.classList.toggle('active', btn === button && !button.classList.contains('active'));
     });
 }
 
 // EVENT LISTENERS
 gridSlider.addEventListener('input', () => sliderUpdate());
-buttons.addEventListener('click', )
+toggleButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        toggleButtonActive(button);
+    });
+});
