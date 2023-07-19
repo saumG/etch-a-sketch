@@ -48,8 +48,20 @@ html, body {
     justify-content: center;
     width: 200px;
     border: 2px solid brown;
+    gap: 12px;
 }
 
+.settings > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings > #btn {
+    padding: 12px 32px;
+    border: 2px solid blueviolet;
+    border-radius: 36px;
+}
 
 /* HEADER AND FOOTER */
 .header {
