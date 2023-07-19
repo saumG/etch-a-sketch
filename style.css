@@ -60,7 +60,7 @@ html, body {
     gap: 18px;
 }
 
-.settings > div > #box {
+#box {
     border: 2px solid black;
     width: 36px;
     height: 36px;
@@ -77,6 +77,12 @@ html, body {
     padding: 12px 32px;
     border: 2px solid blueviolet;
     border-radius: 36px;
+    cursor: pointer;
+}
+
+#btn:active { 
+    /* TODO */
+    background-color: #d51010; 
 }
 
 /* HEADER AND FOOTER */
