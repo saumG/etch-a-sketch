@@ -3,7 +3,6 @@
 let numCols = 64;
 let numRows = 64;
 
-
 //Get the DOM for the grid container in which the grid elements will be added
 const gridContainer = document.querySelector('.grid-container');
 
