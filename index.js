@@ -16,7 +16,7 @@ function createGrid () {
     let gridArea = numCols*numRows;
     for (let box = 0; box < gridArea; box++){
         let cell = document.createElement("div");
-        cell.innerText = box + 1;
+        // cell.innerText = box + 1;
         gridContainer.appendChild(cell).className = "grid-box";
     }
     console.log("created grid");

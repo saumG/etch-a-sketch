@@ -3,12 +3,17 @@ body {
     margin: 0;
 }
 
-
-
 .app {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 3px solid magenta;
+}
+
+.container-wrapper {
+    display: grid;
+    border: 3px solid blue;
+    max-width: 100%;
 }
 
 .grid-container {
@@ -17,9 +22,15 @@ body {
     grid-template-columns: repeat(var(--grid-cols), 1fr); /* Adjust the number of columns as needed */
     background-color: #f0f0f0; /* Set the background color of the grid */
     padding: 5px; /* Add padding to the grid container */
+    width: 960px;
+    height: 960px;
+    max-width: 100%;
+    grid-auto-flow: row;
 }
 
 .grid-box {
     border: 1px solid #d51010; /* Add border to the grid cells */
-    text-align: center; 
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
 }
