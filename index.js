@@ -4,6 +4,12 @@ const gridContainer = document.querySelector('.grid-container');
 //Get all necessary DOMs
 const colorChoice = document.getElementById('color-select');
 const bgChoice = document.getElementById('bg-select');
+const rainbowMode = document.querySelector('.rainbow');
+const shadingMode = document.querySelector('.shading');
+const eraserMode = document.querySelector('.eraser');
+const gridSize = document.getElementById('size-range');
+const gridLines = document.querySelector('.grid-lines');
+const clear = document.querySelector('.clear');
 
 //set grid size
 let numCols = 64;
