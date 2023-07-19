@@ -76,6 +76,12 @@ function colorGrid(){
             break;
     }
 }
+
+function eraseAll () {
+    let gridBoxes = gridContainer.querySelectorAll('div');
+    gridBoxes.forEach(gridBox => gridBox.style.backgroundColor = '#ffffff');
+}
+
 function deleteBoxDivs() {
     let gridBoxes = gridContainer.querySelectorAll('div');
     gridBoxes.forEach(gridBox => gridBox.remove());
