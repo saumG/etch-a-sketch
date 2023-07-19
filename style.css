@@ -6,13 +6,17 @@ html, body {
     flex-direction: column;
 }
 
+input {
+    all: unset;
+}
+
 .app {
     display: flex;
     flex: 1;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    border: 3px solid magenta;
+    background-color: #353535;
 }
 
 .container-wrapper {
@@ -26,10 +30,10 @@ html, body {
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr); /* Adjust the number of columns as needed */
     background-color: white; /* Set the background color of the grid */
-    width: 960px;
-    height: 960px;
+    width: 800px;
+    height: 800px;
     max-width: 100%;
-    border: 3px solid red;
+    border: 5px solid black;
 }
 
 .grid-box {
@@ -47,9 +51,13 @@ html, body {
     align-items: center;
     justify-content: center;
     width: 250px;
-    border: 2px solid brown;
+    border: 2px solid #FBA320;
     gap: 12px;
     padding: 12px 0px;
+    color: rgb(250,198,80);
+    background-color: #474747;
+    border-radius: 36px;
+
 }
 
 .settings > .pen-color,
@@ -57,18 +65,17 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 18px;
+    gap: 12px;
 }
 
 #color-select, 
 #bg-select {
     display: flex;
-    border: none;
+    border: 0;
+    outline: none;
     width: 44px;
     height: 36px;
     cursor: pointer;
-    padding: 0;
-    margin: 0;
 }
 
 
@@ -100,18 +107,18 @@ html, body {
     padding: 20px;
     font-size: 36px;
     font-weight: 700;
-    color: rgb(250,198,80);
-    background-color: #131b23;
+    color: #FCA521;
+    background-color: #232323;
 }
 
 .footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1f2937;
+    background-color: #232323;
     text-align: center;
     justify-content: center;
     padding: 24px;
-    color: #e5e7eb;
+    color: #FCA521;
     margin-top: auto;
 }
